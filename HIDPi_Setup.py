@@ -59,9 +59,9 @@ After=network.target multi-user.target
 Wants=multi-user.target
 
 [Service]
-Type=oneshot
+Type=simple
 ExecStart={PYTHON_LOCATION} {INSTALL_PATH}
-RemainAfterExit=yes
+RemainAfterExit=no
 User=root
 
 [Install]
