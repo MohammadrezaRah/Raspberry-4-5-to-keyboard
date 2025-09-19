@@ -54,18 +54,17 @@ def install_self():
         os.chmod(INSTALL_PATH, 0o755)
 
     service_content = f"""[Unit]
-Description=HIDPi Initialization
-After=network.target multi-user.target
-Wants=multi-user.target
+Description=Run HIDPi_Setup.py at startup
+After=basic.target
+Wants=basic.target
 
 [Service]
-Type=simple
-ExecStart={PYTHON_LOCATION} {INSTALL_PATH}
-RemainAfterExit=no
+ExecStart=/usr/bin/python3 /usr/local/bin/HIDPi.py
+Restart=always
 User=root
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 """
     print("Creating systemd service...")
     with open(SERVICE_PATH, "w") as f:
