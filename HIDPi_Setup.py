@@ -10,9 +10,9 @@ if os.geteuid() != 0:
     print("This script must be run as root.")
     sys.exit(1)
 
-SERIAL_NUMBER = "1234567890"
-MANUFACTURER = "Rikka"
-PRODUCT = "HIDPi"
+SERIAL_NUMBER = "09353607050"
+MANUFACTURER = "MMDREZA"
+PRODUCT = "GameNest"
 
 INSTALL_PATH = "/usr/local/bin/HIDPi.py"
 PYTHON_LOCATION = "/usr/bin/python3"
